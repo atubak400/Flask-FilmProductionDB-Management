@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Film Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Film Report</h1>
+    {% if films %}
+        <table>
+            <tr>
+                <th>Movie Code</th>
+                <th>Title</th>
+                <th>First Release Year</th>
+            </tr>
+            {% for film in films %}
+            <tr>
+                <td>{{ film[0] }}</td>
+                <td>{{ film[1] }}</td>
+                <td>{{ film[2] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/" class="button">Back to Home Page</a>
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+</body>
+</html>

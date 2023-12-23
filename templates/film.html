@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Film Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Film Form</h1>
+
+    <!-- Form 1: Insert Film -->
+    <h2>Insert Film</h2>
+    <form method="POST" action="/film">
+        <!-- Movie Code field -->
+        <label for="MovieCode">Movie Code:</label>
+        <input type="text" name="MovieCode" id="MovieCode" required><br>
+
+        <!-- Title field -->
+        <label for="Title">Title:</label>
+        <input type="text" name="Title" id="Title" required><br>
+
+        <!-- First Release Year field -->
+        <label for="FirstReleaseYear">First Release Year:</label>
+        <input type="number" name="FirstReleaseYear" id="FirstReleaseYear" required><br>
+
+        <button type="submit">Insert Film</button>
+    </form>
+
+    <!-- Form 2: Generate Report -->
+    <h2>Generate Film Report</h2>
+    <form method="GET" action="/film/report">
+        <!-- Title field -->
+        <label for="reportTitle">Title:</label>
+        <input type="text" name="reportTitle" id="reportTitle" required><br>
+
+        <button type="submit">Generate Report</button>
+    </form>
+
+    <!-- Form 3: View All Films -->
+    <h2>View All Films</h2>
+    <form method="GET" action="/film/all">
+        <button type="submit">View All Films</button>
+    </form>
+
+    <a href="/" class="button">Back to Home Page</a>
+</body>
+</html>

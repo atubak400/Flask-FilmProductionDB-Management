@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Tables</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>All Database Tables</h1>
+    {% if result %}
+        <table>
+            <tr>
+                <th>Table Name</th>
+            </tr>
+            {% for table in result %}
+            <tr>
+                <td>{{ table[0] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/" class="button">Back to Home Page</a>
+    {% else %}
+        <p>No tables found in the database.</p>
+    {% endif %}
+</body>
+</html>

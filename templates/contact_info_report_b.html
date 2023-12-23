@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Information Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Contact Information Report</h1>
+    {% if contact_info %}
+        <table>
+            <tr>
+                <th>Contact ID</th>
+                <th>Telephone Number</th>
+                <th>Telephone Number Description</th>
+                <th>National Insurance Number</th>
+                <th>Passport Number</th>
+                <th>Employee ID</th>
+            </tr>
+            {% for contact in contact_info %}
+            <tr>
+                <td>{{ contact[5] }}</td>
+                <td>{{ contact[0] }}</td>
+                <td>{{ contact[1] }}</td>
+                <td>{{ contact[2] }}</td>
+                <td>{{ contact[3] }}</td>
+                <td>{{ contact[4] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/" class="button">Back to Home Page</a>
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+</body>
+</html>

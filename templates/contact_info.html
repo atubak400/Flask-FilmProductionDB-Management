@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Information Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Contact Information Form</h1>
+    <form method="POST" action="/ContactInformation">
+        <!-- Telephone Number field -->
+        <label for="TelephoneNumber">Telephone Number:</label>
+        <input type="text" name="TelephoneNumber" id="TelephoneNumber" required><br>
+
+        <!-- Telephone Number Description field -->
+        <label for="TelephoneNumberDescription">Telephone Number Description:</label>
+        <input type="text" name="TelephoneNumberDescription" id="TelephoneNumberDescription" required><br>
+
+        <!-- National Insurance Number field -->
+        <label for="NationalInsuranceNumber">National Insurance Number:</label>
+        <input type="text" name="NationalInsuranceNumber" id="NationalInsuranceNumber" required><br>
+
+        <!-- Passport Number field -->
+        <label for="PassportNumber">Passport Number:</label>
+        <input type="text" name="PassportNumber" id="PassportNumber" required><br>
+
+        <!-- Employee ID field -->
+        <label for="EmployeeID">Employee ID:</label>
+        <input type="text" name="EmployeeID" id="EmployeeID" required><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h1>Generate Report</h1>
+    <form method="GET" action="/ContactInformation/report">
+        <label for="reportEmployeeID">Employee ID for Report:</label>
+        <input type="text" name="reportEmployeeID" id="reportEmployeeID" required><br>
+    
+        <button type="submit">Generate Report</button>
+    </form>
+    
+    
+
+    <h1>View All Contact Information</h1>
+    <form method="GET" action="/ContactInformation/all">
+        <button type="submit">View All Contact Information</button>
+    </form>
+    <a href="/" class="button">Back to Home Page</a>
+</body>
+</html>

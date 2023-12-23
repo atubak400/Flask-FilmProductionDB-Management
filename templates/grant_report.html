@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grant Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Grant Report</h1>
+    {% if grants %}
+        <table>
+            <tr>
+                <th>Grant Title</th>
+                <th>Funding Organization</th>
+                <th>Max Monetary Value</th>
+                <th>Deadline for Submission</th>
+            </tr>
+            {% for grant in grants %}
+            <tr>
+                <td>{{ grant[0] }}</td>
+                <td>{{ grant[1] }}</td>
+                <td>{{ grant[2] }}</td>
+                <td>{{ grant[3] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/" class="button">Back to Home Page</a>
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grant Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Grant Application Form</h1>
+
+    <form method="POST" action="/grantapplication">
+        <label for="ApplicationDate">Application Date:</label>
+        <input type="date" name="ApplicationDate" id="ApplicationDate" required><br>
+
+        <label for="DesiredAmount">Desired Amount:</label>
+        <input type="number" name="DesiredAmount" id="DesiredAmount" required><br>
+
+        <label for="Outcome">Outcome:</label>
+        <input type="text" name="Outcome" id="Outcome" required><br>
+
+        <label for="GrantTitle">Grant Title:</label>
+        <input type="text" name="GrantTitle" id="GrantTitle" required><br>
+
+        <label for="CompanyName">Company Name:</label>
+        <input type="text" name="CompanyName" id="CompanyName" required><br>
+
+        <label for="ApplicationId">Application ID:</label>
+        <input type="text" name="ApplicationId" id="ApplicationId" required><br>
+
+        <button type="submit">Submit Application</button>
+    </form>
+
+    <h2>Generate Report for Specific Application</h2>
+    <form method="GET" action="/grantapplication/report">
+        <label for="applicationId">Application ID:</label>
+        <input type="text" name="applicationId" id="applicationId" required><br>
+        <button type="submit">Generate Report</button>
+    </form>
+
+    <h2>View All Grant Applications</h2>
+    <form method="GET" action="/grantapplication/all">
+        <button type="submit">View All Applications</button>
+    </form>
+
+
+    <a href="/" class="button">Back to Home Page</a>
+</body>
+</html>

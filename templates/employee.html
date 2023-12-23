@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Employee Form</h1>
+    <form method="POST" action="/employee">
+        <!-- Employee ID field -->
+        <label for="EmployeeID">Employee ID:</label>
+        <input type="text" name="EmployeeID" id="EmployeeID"><br>
+
+        <!-- First Name field -->
+        <label for="FirstName">First Name:</label>
+        <input type="text" name="FirstName" id="FirstName" required><br>
+
+        <!-- Surname field -->
+        <label for="Surname">Surname:</label>
+        <input type="text" name="Surname" id="Surname" required><br>
+
+        <!-- Middle Name field -->
+        <label for="MiddleName">Middle Name:</label>
+        <input type="text" name="MiddleName" id="MiddleName"><br>
+
+        <!-- Date of Birth field -->
+        <label for="DateOfBirth">Date of Birth:</label>
+        <input type="date" name="DateOfBirth" id="DateOfBirth" required><br>
+
+        <!-- Commencement Date field -->
+        <label for="CommencementDate">Commencement Date:</label>
+        <input type="date" name="CommencementDate" id="CommencementDate" required><br>
+
+        <!-- Email Address field -->
+        <label for="EmailAddress">Email Address:</label>
+        <input type="email" name="EmailAddress" id="EmailAddress" required><br>
+
+        <!-- Company Name field -->
+        <label for="CompanyName">Company Name:</label>
+        <input type="text" name="CompanyName" id="CompanyName" required><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h1>Generate Report</h1>
+    <form method="GET" action="/employee/report">
+        <label for="reportEmployeeID">Employee ID for Report:</label>
+        <input type="text" name="reportEmployeeID" id="reportEmployeeID" required><br>
+    
+        <button type="submit">Generate Report</button>
+    </form>
+
+    <h1>View All Employees</h1>
+    <form method="GET" action="/employee/all">
+        <button type="submit">View All Employees</button>
+    </form>
+    <a href="/" class="button">Back to Home Page</a>
+</body>
+</html>

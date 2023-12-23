@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Production Company Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Production Company Form</h1>
+    <form method="POST" action="/production_company">
+        <label for="CompanyName">Company Name:</label>
+        <input type="text" name="CompanyName" id="CompanyName" required><br>
+
+        <label for="Address">Address:</label>
+        <textarea name="Address" id="Address" required></textarea><br>
+
+        <label for="ZIPCode">ZIP Code:</label>
+        <input type="text" name="ZIPCode" id="ZIPCode" required><br>
+
+        <label for="City">City:</label>
+        <input type="text" name="City" id="City" required><br>
+
+        <label for="Nation">Nation:</label>
+        <input type="text" name="Nation" id="Nation" required><br>
+
+        <label for="TypeOfOrganization">Type of Organization:</label>
+        <input type="text" name="TypeOfOrganization" id="TypeOfOrganization" required><br>
+
+        <label for="NumEmployees">Number of Employees:</label>
+        <input type="number" name="NumEmployees" id="NumEmployees" required><br>
+
+        <label for="NetValue">Net Value:</label>
+        <input type="text" name="NetValue" id="NetValue" required><br>
+
+        <label for="RegistrationDate">Registration Date:</label>
+        <input type="date" name="RegistrationDate" id="RegistrationDate" required><br>
+
+        <label for="RegistrationOffice">Registration Office:</label>
+        <input type="text" name="RegistrationOffice" id="RegistrationOffice" required><br>
+
+        <label for="RegistrationFee">Registration Fee:</label>
+        <input type="text" name="RegistrationFee" id="RegistrationFee" required><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h1>Generate Report</h1>
+    <form method="GET" action="/production_company/report">
+            <label for="reportCompanyName">Company Name for Report:</label>
+            <input type="text" name="reportCompanyName" id="reportCompanyName" required><br>
+
+            <button type="submit">Generate Report</button>
+    </form>
+
+    <h1>View All Production Companies</h1>
+    <form method="GET" action="/production_company/all">
+        <button type="submit">View All Companies</button>
+    </form>
+    <a href="/" class="button">Back to Home Page</a>
+</body>
+</html>

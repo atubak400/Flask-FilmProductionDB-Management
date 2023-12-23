@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Production Company Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Production Company Report</h1>
+    {% if companies %}
+        <table>
+            <tr>
+                <th>Company Name</th>
+                <th>Address</th>
+                <th>ZIP Code</th>
+                <th>City</th>
+                <th>Nation</th>
+                <th>Type of Organization</th>
+                <th>Number of Employees</th>
+                <th>Net Value</th>
+                <th>Registration Date</th>
+                <th>Registration Office</th>
+                <th>Registration Fee</th>
+            </tr>
+            {% for company in companies %}
+            <tr>
+                <td>{{ company[0] }}</td>
+                <td>{{ company[1] }}</td>
+                <td>{{ company[2] }}</td>
+                <td>{{ company[3] }}</td>
+                <td>{{ company[4] }}</td>
+                <td>{{ company[5] }}</td>
+                <td>{{ company[6] }}</td>
+                <td>{{ company[7] }}</td>
+                <td>{{ company[8] }}</td>
+                <td>{{ company[9] }}</td>
+                <td>{{ company[10] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/" class="button">Back to Home Page</a>
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grant Application Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Grant Application Report</h1>
+
+    <!-- Debugging print to show raw data structure -->
+    <!-- <h2>Debug Data</h2>
+    <pre>{{ grant_applications }}</pre> -->
+
+    {% if grant_applications %}
+        <table>
+            <tr>
+                <th>Application Date</th>
+                <th>Desired Amount</th>
+                <th>Outcome</th>
+                <th>Grant Title</th>
+                <th>Company Name</th>
+                <th>Application ID</th>
+            </tr>
+            {% for application in grant_applications %}
+            <tr>
+                <td>{{ application[0] }}</td>
+                <td>{{ application[1] }}</td>
+                <td>{{ application[2] }}</td>
+                <td>{{ application[3] }}</td>
+                <td>{{ application[4] }}</td>
+                <td>{{ application[5] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+
+    <a href="/" class="button">Back to Home Page</a>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Employee Report</h1>
+    {% if employees %}
+        <table>
+            <tr>
+                <th>Employee ID</th>
+                <th>First Name</th>
+                <th>Surname</th>
+                <th>Middle Name</th>
+                <th>Date of Birth</th>
+                <th>Commencement Date</th>
+                <th>Email Address</th>
+                <th>Company Name</th>
+            </tr>
+            {% for employee in employees %}
+            <tr>
+                <td>{{ employee[0] }}</td>
+                <td>{{ employee[1] }}</td>
+                <td>{{ employee[2] }}</td>
+                <td>{{ employee[3] }}</td>
+                <td>{{ employee[4] }}</td>
+                <td>{{ employee[5] }}</td>
+                <td>{{ employee[6] }}</td>
+                <td>{{ employee[7] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/" class="button">Back to Home Page</a>
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+</body>
+</html>

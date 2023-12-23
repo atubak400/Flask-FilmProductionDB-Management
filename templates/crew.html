@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crew Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Crew Form</h1>
+    <form method="POST" action="/crew">
+        <!-- Crew ID field (Assuming it's auto-generated, not included in the form) -->
+        
+        <!-- Role field -->
+        <label for="Role">Role:</label>
+        <input type="text" name="Role" id="Role" required><br>
+
+        <!-- Role Description field -->
+        <label for="RoleDescription">Role Description:</label>
+        <textarea name="RoleDescription" id="RoleDescription"></textarea><br>
+
+        <!-- Bonus field -->
+        <label for="Bonus">Bonus:</label>
+        <input type="number" step="0.01" name="Bonus" id="Bonus" required><br>
+
+        <!-- Employee ID field -->
+        <label for="EmployeeID">Employee ID:</label>
+        <input type="number" name="EmployeeID" id="EmployeeID" required><br>
+
+        <!-- Movie Code field -->
+        <label for="MovieCode">Movie Code:</label>
+        <input type="text" name="MovieCode" id="MovieCode" required><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <h1>Generate Report</h1>
+    <form method="GET" action="/crew/report">
+        <label for="reportCrewID">Crew ID for Report:</label>
+        <input type="text" name="reportCrewID" id="reportCrewID" required><br>
+    
+        <button type="submit">Generate Report</button>
+    </form>
+
+    <h1>View All Crew Members</h1>
+    <form method="GET" action="/crew/all">
+        <button type="submit">View All Crew Members</button>
+    </form>
+    <a href="/" class="button">Back to Home Page</a>
+</body>
+</html>

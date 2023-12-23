@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crew Report</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Crew Report</h1>
+    {% if crew %}
+        <table>
+            <tr>
+                <th>Crew ID</th>
+                <th>Role</th>
+                <th>Role Description</th>
+                <th>Bonus</th>
+                <th>Employee ID</th>
+                <th>Movie Code</th>
+            </tr>
+            {% for crew_member in crew %}
+            <tr>
+                <td>{{ crew_member[5] }}</td>
+                <td>{{ crew_member[0] }}</td>
+                <td>{{ crew_member[1] }}</td>
+                <td>{{ crew_member[2] }}</td>
+                <td>{{ crew_member[3] }}</td>
+                <td>{{ crew_member[4] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="/" class="button">Back to Home Page</a>
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+</body>
+</html>
